@@ -1,4 +1,9 @@
 # 短学期项目-招聘平台
+## 特别鸣谢
+感谢[Jetbrains](https://www.jetbrains.com/?from=Recruitment-System-Front)提供的免费教育许可证
+
+<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains 徽标（主要） logo.">
+<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm.svg" alt="WebStorm logo.">
 
 > v1.0.0
 
