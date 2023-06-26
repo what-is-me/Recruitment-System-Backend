@@ -11,7 +11,7 @@ import java.util.List;
 @Document(collection = "p")
 public class Passage {
     @Id
-    String id;
+    String pid;
     String title;
     String detail;
     String uid;

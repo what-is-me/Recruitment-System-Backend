@@ -10,7 +10,7 @@ import java.util.List;
 @Document("job")
 public class Job {
     @Id
-    String id;
+    String jid;
     String companyId;
     String name;
     String address;

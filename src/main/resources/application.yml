@@ -25,7 +25,7 @@ spring:
     time-zone: GMT+8
     default-property-inclusion: NON_NULL
     serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false
+      WRITE_DATES_AS_TIMESTAMPS: true
       FAIL_ON_EMPTY_BEANS: true
     deserialization:
       FAIL_ON_UNKNOWN_PROPERTIES: false

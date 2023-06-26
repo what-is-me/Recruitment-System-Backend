@@ -9,6 +9,7 @@ import per.whatisme.employeebackend.repository.EmployeeRepository;
 import per.whatisme.employeebackend.repository.PassageRepository;
 import reactor.core.publisher.Mono;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -43,8 +44,8 @@ public class PassageController {
     Mono<SaResult> newPassage(@RequestBody Passage passage, @RequestParam(required = false) String replyId) {
         if (!StpUtil.isLogin()) return Mono.just(SaResult.error("未登录"));
         String uid = (String) StpUtil.getLoginId();
-        passage.setId(UUID.randomUUID().toString());
-        passage.setReplies(List.of());
+        passage.setPid(UUID.randomUUID().toString());
+        passage.setReplies(new ArrayList<>());
         passage.setTimespan(new Date());
         passage.setUid(uid);
         Mono<Passage> mono = employeeRepository
@@ -57,9 +58,15 @@ public class PassageController {
         if (replyId != null)
             mono = mono.flatMap(p -> passageRepository.findById(replyId))
                     .flatMap(p -> {
-                        p.getReplies().add(passage.getId());
+                        if (p.getReplies() == null) p.setReplies(List.of());
+                        p.getReplies().add(passage.getPid());
                         return passageRepository.save(p);
                     });
         return mono.map(p -> SaResult.ok("更新成功"));
+    }
+
+    @GetMapping("/{pid}")
+    Mono<SaResult> findOne(@PathVariable String pid) {
+        return passageRepository.findById(pid).map(SaResult::data);
     }
 }

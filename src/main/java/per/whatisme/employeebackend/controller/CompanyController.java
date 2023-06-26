@@ -24,15 +24,15 @@ public class CompanyController {
 
     @PostMapping("/doLogin")
     Mono<SaResult> doLogin(@RequestBody User user) {
-        StpUtil.login(user.getId());
+        StpUtil.login(user.getUid());
         SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
         return companyRepository
-                .findById(user.getId())
+                .findById(user.getUid())
                 .map(u -> {
                     if (u.getPwd().equals(user.getPwd())) {
                         return SaResult.data(tokenInfo);
                     } else {
-                        StpUtil.kickout(user.getId());
+                        StpUtil.kickout(user.getUid());
                         return SaResult.error("密码错误");
                     }
                 }).defaultIfEmpty(SaResult.error("用户不存在"));
@@ -41,7 +41,7 @@ public class CompanyController {
     @PostMapping("/sign-up")
     Mono<SaResult> signUp(@RequestBody User user) {
         Company company = new Company();
-        company.setId(user.getId());
+        company.setUid(user.getUid());
         company.setPwd(user.getPwd());
         return companyRepository
                 .insert(company)
@@ -51,8 +51,10 @@ public class CompanyController {
 
     @GetMapping("/profile")
     Mono<SaResult> profile(@RequestParam(required = false) String id) {
-        if (!StpUtil.isLogin()) return Mono.just(SaResult.error("未登录"));
-        if (id == null) id = (String) StpUtil.getLoginId();
+        if (id == null) {
+            if (!StpUtil.isLogin()) return Mono.just(SaResult.error("未登录"));
+            id = (String) StpUtil.getLoginId();
+        }
         return companyRepository
                 .findById(id)
                 .map(u -> {
@@ -76,12 +78,12 @@ public class CompanyController {
     Mono<SaResult> alterProfile(@RequestBody Company user) {
         if (!StpUtil.isLogin()) return Mono.just(SaResult.error("未登录"));
         String id = (String) StpUtil.getLoginId();
-        assert Objects.equals(user.getId(), id);
-        user.setId(id);
+        user.setUid(id);
         return companyRepository
                 .findById(id)
                 .flatMap(u -> {
                     if (user.getPwd() == null) user.setPwd(u.getPwd());
+                    user.setJobs(u.getJobs());
                     return companyRepository.save(user);
                 })
                 .map(u -> SaResult.ok("更新成功"))

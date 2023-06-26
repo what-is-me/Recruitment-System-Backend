@@ -7,5 +7,5 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 
 public interface JobRepository extends ReactiveMongoRepository<Job, String> {
-    Flux<Job> findJobsByNameContainsAndAddressContainsAndTagsContainsAndEduBackgroundInAndPriceMinGreaterThanEqualAndPriceMaxLessThanEqual(String name, String address, String Tag, List<String> eduBackground, Double minPrice, Double MaxPrice);
+    Flux<Job> findJobsByNameContainsAndAddressContainsAndEduBackgroundInAndPriceMinGreaterThanEqualAndPriceMaxLessThanEqual(String name, String address, List<String> eduBackground, Double minPrice, Double MaxPrice);
 }
