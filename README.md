@@ -1,9 +1,12 @@
 # 短学期项目-招聘平台
-## 特别鸣谢
-感谢[Jetbrains](https://www.jetbrains.com/?from=Recruitment-System-Front)提供的免费教育许可证
 
-<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains 徽标（主要） logo.">
-<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm.svg" alt="WebStorm logo.">
+## 特别鸣谢
+
+感谢[Jetbrains](https://www.jetbrains.com/?from=Recruitment-System-Backend)提供的免费教育许可证
+
+[<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains 徽标（主要） logo.">](https://www.jetbrains.com/?from=Recruitment-System-Backend)
+[<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/IntelliJ_IDEA.svg" alt="IntelliJ IDEA logo.">](https://www.jetbrains.com/?from=Recruitment-System-Backend)
+
 
 > v1.0.0
 
@@ -30,11 +33,11 @@ POST /api/company/doLogin
 
 ### 请求参数
 
-|名称|位置|类型|必选|说明|
-|---|---|---|---|---|
-|body|body|object| 否 |none|
-|» uid|body|string| 是 |none|
-|» pwd|body|string| 是 |none|
+| 名称    | 位置   | 类型     | 必选 | 说明   |
+|-------|------|--------|----|------|
+| body  | body | object | 否  | none |
+| » uid | body | string | 是  | none |
+| » pwd | body | string | 是  | none |
 
 > 返回示例
 
@@ -50,13 +53,13 @@ POST /api/company/doLogin
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[SaResult](#schemasaresult)|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型                        |
+|-----|-----------------------------------------------------------------|--------------|-----------------------------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | [SaResult](#schemasaresult) |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline                      |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline                      |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline                      |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline                      |
 
 ### 返回数据结构
 
@@ -68,9 +71,9 @@ GET /api/company/profile
 
 ### 请求参数
 
-|名称|位置|类型|必选|说明|
-|---|---|---|---|---|
-|id|query|string| 否 |id|
+| 名称 | 位置    | 类型     | 必选 | 说明 |
+|----|-------|--------|----|----|
+| id | query | string | 否  | id |
 
 > 返回示例
 
@@ -86,12 +89,12 @@ GET /api/company/profile
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[SaResult](#schemasaresult)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型                        |
+|-----|-----------------------------------------------------------------|--------------|-----------------------------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | [SaResult](#schemasaresult) |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline                      |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline                      |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline                      |
 
 ### 返回数据结构
 
@@ -122,9 +125,9 @@ POST /api/company/profile
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|[Company](#schemacompany)| 否 | Company|none|
+| 名称   | 位置   | 类型                        | 必选 | 中文名     | 说明   |
+|------|------|---------------------------|----|---------|------|
+| body | body | [Company](#schemacompany) | 否  | Company | none |
 
 > 返回示例
 
@@ -139,21 +142,21 @@ POST /api/company/profile
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdsignUpUsingPOST"></a>
 
@@ -172,9 +175,9 @@ POST /api/company/sign-up
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|[User](#schemauser)| 否 | User|none|
+| 名称   | 位置   | 类型                  | 必选 | 中文名  | 说明   |
+|------|------|---------------------|----|------|------|
+| body | body | [User](#schemauser) | 否  | User | none |
 
 > 返回示例
 
@@ -189,21 +192,21 @@ POST /api/company/sign-up
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdsubmittedUsingGET"></a>
 
@@ -224,20 +227,20 @@ GET /api/company/submitted
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 # 求职者
 
@@ -258,9 +261,9 @@ POST /api/employee/doLogin
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|[User](#schemauser)| 否 | User|none|
+| 名称   | 位置   | 类型                  | 必选 | 中文名  | 说明   |
+|------|------|---------------------|----|------|------|
+| body | body | [User](#schemauser) | 否  | User | none |
 
 > 返回示例
 
@@ -275,21 +278,21 @@ POST /api/employee/doLogin
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdprofileUsingGET_1"></a>
 
@@ -299,9 +302,9 @@ GET /api/employee/profile
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|id|query|string| 否 ||id|
+| 名称 | 位置    | 类型     | 必选 | 中文名 | 说明 |
+|----|-------|--------|----|-----|----|
+| id | query | string | 否  |     | id |
 
 > 返回示例
 
@@ -316,20 +319,20 @@ GET /api/employee/profile
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdalterProfileUsingPOST_1"></a>
 
@@ -391,9 +394,9 @@ POST /api/employee/profile
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|[Employee](#schemaemployee)| 否 | Employee|none|
+| 名称   | 位置   | 类型                          | 必选 | 中文名      | 说明   |
+|------|------|-----------------------------|----|----------|------|
+| body | body | [Employee](#schemaemployee) | 否  | Employee | none |
 
 > 返回示例
 
@@ -408,21 +411,21 @@ POST /api/employee/profile
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdsignUpUsingPOST_1"></a>
 
@@ -441,9 +444,9 @@ POST /api/employee/sign-up
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|[User](#schemauser)| 否 | User|none|
+| 名称   | 位置   | 类型                  | 必选 | 中文名  | 说明   |
+|------|------|---------------------|----|------|------|
+| body | body | [User](#schemauser) | 否  | User | none |
 
 > 返回示例
 
@@ -458,21 +461,21 @@ POST /api/employee/sign-up
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdstarToggleJobUsingGET"></a>
 
@@ -482,9 +485,9 @@ GET /api/employee/star-toggle
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|jid|query|string| 是 ||jid|
+| 名称  | 位置    | 类型     | 必选 | 中文名 | 说明  |
+|-----|-------|--------|----|-----|-----|
+| jid | query | string | 是  |     | jid |
 
 > 返回示例
 
@@ -499,20 +502,20 @@ GET /api/employee/star-toggle
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdsubmitUsingPOST"></a>
 
@@ -522,9 +525,9 @@ POST /api/employee/submit
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|jid|query|string| 是 ||jid|
+| 名称  | 位置    | 类型     | 必选 | 中文名 | 说明  |
+|-----|-------|--------|----|-----|-----|
+| jid | query | string | 是  |     | jid |
 
 > 返回示例
 
@@ -539,21 +542,21 @@ POST /api/employee/submit
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdsubmittedUsingGET_1"></a>
 
@@ -574,20 +577,20 @@ GET /api/employee/submitted
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 # 职位
 
@@ -599,9 +602,9 @@ GET /api/job
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|jid|query|string| 是 ||jid|
+| 名称  | 位置    | 类型     | 必选 | 中文名 | 说明  |
+|-----|-------|--------|----|-----|-----|
+| jid | query | string | 是  |     | jid |
 
 > 返回示例
 
@@ -616,20 +619,20 @@ GET /api/job
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdjobsUsingGET"></a>
 
@@ -650,20 +653,20 @@ GET /api/jobs
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdjobsSelectedUsingPOST"></a>
 
@@ -681,9 +684,9 @@ POST /api/jobs
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|object| 否 ||none|
+| 名称   | 位置   | 类型     | 必选 | 中文名 | 说明   |
+|------|------|--------|----|-----|------|
+| body | body | object | 否  |     | none |
 
 > 返回示例
 
@@ -698,21 +701,21 @@ POST /api/jobs
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdsaveJobUsingPOST"></a>
 
@@ -728,9 +731,9 @@ POST /api/save-job
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|body|body|[Job](#schemajob)| 否 | Job|none|
+| 名称   | 位置   | 类型                | 必选 | 中文名 | 说明   |
+|------|------|-------------------|----|-----|------|
+| body | body | [Job](#schemajob) | 否  | Job | none |
 
 > 返回示例
 
@@ -745,21 +748,21 @@ POST /api/save-job
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIddeleteJobUsingDELETE"></a>
 
@@ -769,9 +772,9 @@ DELETE /api/delete-job
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|jid|query|string| 是 ||jid|
+| 名称  | 位置    | 类型     | 必选 | 中文名 | 说明  |
+|-----|-------|--------|----|-----|-----|
+| jid | query | string | 是  |     | jid |
 
 > 返回示例
 
@@ -786,20 +789,20 @@ DELETE /api/delete-job
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 204 | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content   | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 # 发帖
 
@@ -822,20 +825,20 @@ GET /api/passage/all
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 <a id="opIdnewPassageUsingPOST"></a>
 
@@ -907,10 +910,10 @@ POST /api/passage/new
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|replyId|query|string| 否 ||replyId|
-|body|body|[Passage](#schemapassage)| 否 | Passage|none|
+| 名称      | 位置    | 类型                        | 必选 | 中文名     | 说明      |
+|---------|-------|---------------------------|----|---------|---------|
+| replyId | query | string                    | 否  |         | replyId |
+| body    | body  | [Passage](#schemapassage) | 否  | Passage | none    |
 
 > 返回示例
 
@@ -925,21 +928,21 @@ POST /api/passage/new
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|Inline|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|Inline|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|Inline|
-|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|Inline|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|Inline|
+| 状态码 | 状态码含义                                                           | 说明           | 数据模型   |
+|-----|-----------------------------------------------------------------|--------------|--------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)         | OK           | Inline |
+| 201 | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)    | Created      | Inline |
+| 401 | [Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1) | Unauthorized | Inline |
+| 403 | [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)  | Forbidden    | Inline |
+| 404 | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)  | Not Found    | Inline |
 
 ### 返回数据结构
 
 状态码 **200**
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|» **additionalProperties**|object|false|none||none|
+| 名称                         | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|----------------------------|--------|-------|------|-----|------|
+| » **additionalProperties** | object | false | none |     | none |
 
 ## GET getPassage
 
@@ -947,9 +950,9 @@ GET /api/passage/{pid}
 
 ### 请求参数
 
-|名称|位置|类型|必选|中文名|说明|
-|---|---|---|---|---|---|
-|pid|path|string| 是 ||none|
+| 名称  | 位置   | 类型     | 必选 | 中文名 | 说明   |
+|-----|------|--------|----|-----|------|
+| pid | path | string | 是  |     | none |
 
 > 返回示例
 
@@ -965,9 +968,9 @@ GET /api/passage/{pid}
 
 ### 返回结果
 
-|状态码|状态码含义|说明|数据模型|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|[SaResult](#schemasaresult)|
+| 状态码 | 状态码含义                                                   | 说明 | 数据模型                        |
+|-----|---------------------------------------------------------|----|-----------------------------|
+| 200 | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | 成功 | [SaResult](#schemasaresult) |
 
 # 数据模型
 
@@ -1043,15 +1046,15 @@ Passage
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|detail|string|false|none||none|
-|employee|[Employee](#schemaemployee)|false|none||none|
-|pid|string|false|none||none|
-|replies|[string]|false|none||none|
-|timespan|string(date-time)|false|none||none|
-|title|string|false|none||none|
-|uid|string|false|none||none|
+| 名称       | 类型                          | 必选    | 约束   | 中文名 | 说明   |
+|----------|-----------------------------|-------|------|-----|------|
+| detail   | string                      | false | none |     | none |
+| employee | [Employee](#schemaemployee) | false | none |     | none |
+| pid      | string                      | false | none |     | none |
+| replies  | [string]                    | false | none |     | none |
+| timespan | string(date-time)           | false | none |     | none |
+| title    | string                      | false | none |     | none |
+| uid      | string                      | false | none |     | none |
 
 <h2 id="tocS_Employee">Employee</h2>
 
@@ -1115,25 +1118,25 @@ Employee
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|address|string|false|none||none|
-|birthday|string(date-time)|false|none||none|
-|edu|[[EducationExperience](#schemaeducationexperience)]|false|none||none|
-|edu_background|string|false|none||none|
-|email|string|false|none||none|
-|name|string|false|none||none|
-|pic|string|false|none||none|
-|project_experiences|[[ProjectExperience](#schemaprojectexperience)]|false|none||none|
-|pwd|string|false|none||none|
-|self_introduce|string|false|none||none|
-|sex|string|false|none||none|
-|star|[string]|false|none||none|
-|tel|string|false|none||none|
-|uid|string|false|none||none|
-|want_price|number(double)|false|none||none|
-|website|string|false|none||none|
-|work_experiences|[[WorkExperience](#schemaworkexperience)]|false|none||none|
+| 名称                  | 类型                                                  | 必选    | 约束   | 中文名 | 说明   |
+|---------------------|-----------------------------------------------------|-------|------|-----|------|
+| address             | string                                              | false | none |     | none |
+| birthday            | string(date-time)                                   | false | none |     | none |
+| edu                 | [[EducationExperience](#schemaeducationexperience)] | false | none |     | none |
+| edu_background      | string                                              | false | none |     | none |
+| email               | string                                              | false | none |     | none |
+| name                | string                                              | false | none |     | none |
+| pic                 | string                                              | false | none |     | none |
+| project_experiences | [[ProjectExperience](#schemaprojectexperience)]     | false | none |     | none |
+| pwd                 | string                                              | false | none |     | none |
+| self_introduce      | string                                              | false | none |     | none |
+| sex                 | string                                              | false | none |     | none |
+| star                | [string]                                            | false | none |     | none |
+| tel                 | string                                              | false | none |     | none |
+| uid                 | string                                              | false | none |     | none |
+| want_price          | number(double)                                      | false | none |     | none |
+| website             | string                                              | false | none |     | none |
+| work_experiences    | [[WorkExperience](#schemaworkexperience)]           | false | none |     | none |
 
 <h2 id="tocS_WorkExperience">WorkExperience</h2>
 
@@ -1158,14 +1161,14 @@ WorkExperience
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|begin|string(date-time)|false|none||none|
-|company|string|false|none||none|
-|detail|string|false|none||none|
-|end|string(date-time)|false|none||none|
-|job_name|string|false|none||none|
-|vocation|string|false|none||none|
+| 名称       | 类型                | 必选    | 约束   | 中文名 | 说明   |
+|----------|-------------------|-------|------|-----|------|
+| begin    | string(date-time) | false | none |     | none |
+| company  | string            | false | none |     | none |
+| detail   | string            | false | none |     | none |
+| end      | string(date-time) | false | none |     | none |
+| job_name | string            | false | none |     | none |
+| vocation | string            | false | none |     | none |
 
 <h2 id="tocS_ProjectExperience">ProjectExperience</h2>
 
@@ -1190,14 +1193,14 @@ ProjectExperience
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|begin|string(date-time)|false|none||none|
-|detail|string|false|none||none|
-|end|string(date-time)|false|none||none|
-|name|string|false|none||none|
-|role|string|false|none||none|
-|url|string|false|none||none|
+| 名称     | 类型                | 必选    | 约束   | 中文名 | 说明   |
+|--------|-------------------|-------|------|-----|------|
+| begin  | string(date-time) | false | none |     | none |
+| detail | string            | false | none |     | none |
+| end    | string(date-time) | false | none |     | none |
+| name   | string            | false | none |     | none |
+| role   | string            | false | none |     | none |
+| url    | string            | false | none |     | none |
 
 <h2 id="tocS_EducationExperience">EducationExperience</h2>
 
@@ -1221,13 +1224,13 @@ EducationExperience
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|begin|string(date-time)|false|none||none|
-|detail|string|false|none||none|
-|end|string(date-time)|false|none||none|
-|major|string|false|none||none|
-|school|string|false|none||none|
+| 名称     | 类型                | 必选    | 约束   | 中文名 | 说明   |
+|--------|-------------------|-------|------|-----|------|
+| begin  | string(date-time) | false | none |     | none |
+| detail | string            | false | none |     | none |
+| end    | string(date-time) | false | none |     | none |
+| major  | string            | false | none |     | none |
+| school | string            | false | none |     | none |
 
 <h2 id="tocS_Job">Job</h2>
 
@@ -1257,17 +1260,17 @@ Job
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|address|string|false|none||none|
-|company_id|string|false|none||none|
-|description|string|false|none||none|
-|edu_background|string|false|none||none|
-|jid|string|false|none||none|
-|name|string|false|none||none|
-|price_max|number(double)|false|none||none|
-|price_min|number(double)|false|none||none|
-|tags|[string]|false|none||none|
+| 名称             | 类型             | 必选    | 约束   | 中文名 | 说明   |
+|----------------|----------------|-------|------|-----|------|
+| address        | string         | false | none |     | none |
+| company_id     | string         | false | none |     | none |
+| description    | string         | false | none |     | none |
+| edu_background | string         | false | none |     | none |
+| jid            | string         | false | none |     | none |
+| name           | string         | false | none |     | none |
+| price_max      | number(double) | false | none |     | none |
+| price_min      | number(double) | false | none |     | none |
+| tags           | [string]       | false | none |     | none |
 
 <h2 id="tocS_User">User</h2>
 
@@ -1288,10 +1291,10 @@ User
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|pwd|string|false|none||none|
-|uid|string|false|none||none|
+| 名称  | 类型     | 必选    | 约束   | 中文名 | 说明   |
+|-----|--------|-------|------|-----|------|
+| pwd | string | false | none |     | none |
+| uid | string | false | none |     | none |
 
 <h2 id="tocS_Company">Company</h2>
 
@@ -1324,18 +1327,18 @@ Company
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|address|string|false|none||none|
-|email|string|false|none||none|
-|introduction|string|false|none||none|
-|jobs|[string]|false|none||none|
-|name|string|false|none||none|
-|pic|string|false|none||none|
-|pwd|string|false|none||none|
-|tags|[string]|false|none||none|
-|tel|string|false|none||none|
-|uid|string|false|none||none|
+| 名称           | 类型       | 必选    | 约束   | 中文名 | 说明   |
+|--------------|----------|-------|------|-----|------|
+| address      | string   | false | none |     | none |
+| email        | string   | false | none |     | none |
+| introduction | string   | false | none |     | none |
+| jobs         | [string] | false | none |     | none |
+| name         | string   | false | none |     | none |
+| pic          | string   | false | none |     | none |
+| pwd          | string   | false | none |     | none |
+| tags         | [string] | false | none |     | none |
+| tel          | string   | false | none |     | none |
+| uid          | string   | false | none |     | none |
 
 <h2 id="tocS_SaResult">SaResult</h2>
 
@@ -1355,9 +1358,9 @@ Company
 
 ### 属性
 
-|名称|类型|必选|约束|中文名|说明|
-|---|---|---|---|---|---|
-|msg|string|false|none||信息|
-|code|integer|true|none||none|
-|data|object|false|none||none|
+| 名称   | 类型      | 必选    | 约束   | 中文名 | 说明   |
+|------|---------|-------|------|-----|------|
+| msg  | string  | false | none |     | 信息   |
+| code | integer | true  | none |     | none |
+| data | object  | false | none |     | none |
 
