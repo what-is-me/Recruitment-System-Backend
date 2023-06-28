@@ -9,14 +9,17 @@ import org.springframework.web.bind.annotation.*;
 import per.whatisme.employeebackend.bean.Employee;
 import per.whatisme.employeebackend.bean.SubmitResume;
 import per.whatisme.employeebackend.bean.User;
+import per.whatisme.employeebackend.bean.UserJobScore;
 import per.whatisme.employeebackend.repository.EmployeeRepository;
 import per.whatisme.employeebackend.repository.JobRepository;
 import per.whatisme.employeebackend.repository.SubmitResumeRepository;
+import per.whatisme.employeebackend.service.UserJobRecommendService;
 import reactor.core.publisher.Mono;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.stream.Collectors;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/employee")
@@ -27,6 +30,8 @@ public class EmployeeController {
     SubmitResumeRepository submitResumeRepository;
     @Autowired
     JobRepository jobRepository;
+    @Autowired
+    UserJobRecommendService userJobRecommendService;
 
     @PostMapping("/doLogin")
     Mono<SaResult> doLogin(@RequestBody User user) {
@@ -42,6 +47,15 @@ public class EmployeeController {
                         return SaResult.error("密码错误");
                     }
                 }).defaultIfEmpty(SaResult.error("用户不存在"));
+    }
+
+    @PostMapping("/view")
+    Mono<SaResult> view(@RequestParam String jid) {
+        if (!StpUtil.isLogin()) return Mono.just(SaResult.error("未登录"));
+        String uid = (String) StpUtil.getLoginId();
+        return userJobRecommendService
+                .view(uid, jid)
+                .map(sj -> SaResult.ok());
     }
 
     @PostMapping("/sign-up")
@@ -94,10 +108,16 @@ public class EmployeeController {
                 .findById(uid)
                 .flatMap(u -> {
                     if (u.getStar() == null) u.setStar(new HashSet<>());
-                    if (u.getStar().contains(jid)) u.getStar().remove(jid);
-                    else u.getStar().add(jid);
-                    log.info(u.getStar().toString());
-                    return employeeRepository.save(u);
+                    Mono<UserJobScore> userJobScoreMono;
+                    if (u.getStar().contains(jid)) {
+                        u.getStar().remove(jid);
+                        userJobScoreMono = userJobRecommendService.unstar(uid, jid);
+                    } else {
+                        u.getStar().add(jid);
+                        userJobScoreMono = userJobRecommendService.star(uid, jid);
+                    }
+                    return userJobScoreMono
+                            .flatMap((sj) -> employeeRepository.save(u));
                 })
                 .map(u -> SaResult.ok("更新成功"))
                 .onErrorReturn(SaResult.error("数据库错误"));

@@ -11,7 +11,7 @@ spring:
         add-to-simple-url-handler-mapping: true
   data:
     mongodb:
-      host: localhost
+      host: 10.100.164.30
       database: employee
       port: 27017
       username: root
